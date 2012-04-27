@@ -1,8 +1,8 @@
 //
-//  HelloWorldLayer.h
+//  BackgroundLayer.h
 //  Space Escape
 //
-//  Created by Ben Leiken on 4/22/12.
+//  Created by Sam Daniel on 4/27/12.
 //  Copyright Tufts 2012. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 // When you import this file, you import all the cocos2d classes
 #import "cocos2d.h"
 
-// HelloWorldLayer
+// BackgroundLayer
 @interface BackgroundLayer : CCLayer
 {
     CCSprite *background;
@@ -18,7 +18,7 @@
     CCSprite *seeker;
 }
 
-// returns a CCScene that contains the HelloWorldLayer as the only child
+// returns a CCScene that contains the BackgroundLayer as the only child
 +(CCScene *) scene;
 - (void) scroll:(ccTime)dt;
 

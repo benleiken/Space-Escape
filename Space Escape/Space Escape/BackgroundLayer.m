@@ -1,8 +1,8 @@
 //
-//  HelloWorldLayer.m
+//  BackgroundLayer.m
 //  Space Escape
 //
-//  Created by Ben Leiken on 4/22/12.
+//  Created by Sam Daniel on 4/22/12.
 //  Copyright Tufts 2012. All rights reserved.
 //
 
