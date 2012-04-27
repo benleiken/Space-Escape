@@ -8,10 +8,10 @@
 
 
 // Import the interfaces
-#import "HelloWorldLayer.h"
+#import "BackgroundLayer.h"
 
 // HelloWorldLayer implementation
-@implementation HelloWorldLayer
+@implementation BackgroundLayer
 
 +(CCScene *) scene
 {
@@ -19,7 +19,7 @@
 	CCScene *scene = [CCScene node];
 	
 	// 'layer' is an autorelease object.
-	HelloWorldLayer *layer = [HelloWorldLayer node];
+	BackgroundLayer *layer = [BackgroundLayer node];
 	
 	// add layer as a child to scene
 	[scene addChild: layer];
@@ -38,10 +38,12 @@
 		//create both sprite to handle background
 		background = [CCSprite spriteWithFile:@"background.png"];
 		background2 = [CCSprite spriteWithFile:@"background.png"];
+        seeker = [CCSprite spriteWithFile:@"seeker.png"];
         
 		//one the screen and second just next to it
 		background.position = ccp(winSize.width/2, winSize.height/2);
-		background2.position = ccp(winSize.width/2, -winSize.height/2);
+		background2.position = ccp(winSize.width + background2.contentSize.width/2, winSize.height/2);
+        seeker.position = ccp(10, winSize.height/2);
         
 		//add schedule to move backgrounds
 		[self schedule:@selector(scroll:)];
@@ -49,6 +51,7 @@
 		//ofc add them to main layer
 		[self addChild:background];
 		[self addChild:background2];
+        [self addChild:seeker];
 	}
 	return self;
 }
@@ -60,24 +63,24 @@
     
 	BOOL flg=FALSE;
     
+    if (!flg) {
+		//move them 100*dt pixels to left
+		background.position = ccp( background.position.x - 40*dt, background.position.y);
+		background2.position = ccp( background2.position.x  - 40*dt, background2.position.y);
+	}
+    
 	//reset position when they are off from view.
-    if (background.position.y - background.contentSize.height/2 >= winSize.height ) {
-        background.position = ccp(winSize.width/2, -winSize.height/2);
+    if (background.position.x + background.contentSize.width/2 <= 0 ) {
+        background.position = ccp(winSize.width/2 + background.contentSize.width/2, winSize.height/2);
 		background2.position = ccp(winSize.width/2, winSize.height/2);
 		flg =TRUE;
     }
-    
-	if (background2.position.y - background2.contentSize.height/2>= winSize.height) {
-        background2.position = ccp(winSize.width/2, -winSize.height/2);
+
+	if (background2.position.x + background2.contentSize.width/2 <= 0) {
+        background2.position = ccp(winSize.width/2 + background2.contentSize.width/2, winSize.height/2);
 		background.position = ccp(winSize.width/2, winSize.height/2);
 		flg =TRUE;
     }
-    
-	if (!flg) {
-		//move them 100*dt pixels to left
-		background.position = ccp( background.position.x , background.position.y + 40*dt);
-		background2.position = ccp( background2.position.x , background2.position.y + 40*dt);
-	}
     
 }
 

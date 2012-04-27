@@ -11,10 +11,11 @@
 #import "cocos2d.h"
 
 // HelloWorldLayer
-@interface HelloWorldLayer : CCLayer
+@interface BackgroundLayer : CCLayer
 {
     CCSprite *background;
     CCSprite *background2;
+    CCSprite *seeker;
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child

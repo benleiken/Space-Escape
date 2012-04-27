@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		228BC4D6154A9E7000073A0B /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 228BC4D5154A9E7000073A0B /* background.png */; };
+		228BC4DC154AA41C00073A0B /* seeker.png in Resources */ = {isa = PBXBuildFile; fileRef = 228BC4DB154AA41C00073A0B /* seeker.png */; };
 		B53DB2591544FE14005B2C92 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B53DB2581544FE14005B2C92 /* QuartzCore.framework */; };
 		B53DB25B1544FE14005B2C92 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B53DB25A1544FE14005B2C92 /* OpenGLES.framework */; };
 		B53DB25D1544FE14005B2C92 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B53DB25C1544FE14005B2C92 /* OpenAL.framework */; };
@@ -122,11 +123,12 @@
 		B53DB3B91544FE1A005B2C92 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B53DB3B81544FE1A005B2C92 /* main.m */; };
 		B53DB3BC1544FE1A005B2C92 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B53DB3BB1544FE1A005B2C92 /* AppDelegate.m */; };
 		B53DB3BF1544FE1A005B2C92 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B53DB3BE1544FE1A005B2C92 /* RootViewController.m */; };
-		B53DB3C21544FE1A005B2C92 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B53DB3C11544FE1A005B2C92 /* HelloWorldLayer.m */; };
+		B53DB3C21544FE1A005B2C92 /* BackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B53DB3C11544FE1A005B2C92 /* BackgroundLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		228BC4D5154A9E7000073A0B /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		228BC4DB154AA41C00073A0B /* seeker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = seeker.png; sourceTree = "<group>"; };
 		B53DB2541544FE14005B2C92 /* Space Escape.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Escape.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B53DB2581544FE14005B2C92 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B53DB25A1544FE14005B2C92 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -359,8 +361,8 @@
 		B53DB3BB1544FE1A005B2C92 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B53DB3BD1544FE1A005B2C92 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		B53DB3BE1544FE1A005B2C92 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		B53DB3C01544FE1A005B2C92 /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		B53DB3C11544FE1A005B2C92 /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
+		B53DB3C01544FE1A005B2C92 /* BackgroundLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BackgroundLayer.h; sourceTree = "<group>"; };
+		B53DB3C11544FE1A005B2C92 /* BackgroundLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BackgroundLayer.m; sourceTree = "<group>"; };
 		B53DB3C31544FE1A005B2C92 /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -422,8 +424,8 @@
 				B53DB3BB1544FE1A005B2C92 /* AppDelegate.m */,
 				B53DB3BD1544FE1A005B2C92 /* RootViewController.h */,
 				B53DB3BE1544FE1A005B2C92 /* RootViewController.m */,
-				B53DB3C01544FE1A005B2C92 /* HelloWorldLayer.h */,
-				B53DB3C11544FE1A005B2C92 /* HelloWorldLayer.m */,
+				B53DB3C01544FE1A005B2C92 /* BackgroundLayer.h */,
+				B53DB3C11544FE1A005B2C92 /* BackgroundLayer.m */,
 				B53DB3C31544FE1A005B2C92 /* GameConfig.h */,
 				B53DB2691544FE14005B2C92 /* Resources */,
 				B53DB27D1544FE14005B2C92 /* libs */,
@@ -446,6 +448,7 @@
 				B53DB2781544FE14005B2C92 /* Icon@2x.png */,
 				B53DB27A1544FE14005B2C92 /* Info.plist */,
 				B53DB27B1544FE14005B2C92 /* iTunesArtwork */,
+				228BC4DB154AA41C00073A0B /* seeker.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -822,6 +825,7 @@
 				B53DB2791544FE14005B2C92 /* Icon@2x.png in Resources */,
 				B53DB27C1544FE14005B2C92 /* iTunesArtwork in Resources */,
 				228BC4D6154A9E7000073A0B /* background.png in Resources */,
+				228BC4DC154AA41C00073A0B /* seeker.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -929,7 +933,7 @@
 				B53DB3B91544FE1A005B2C92 /* main.m in Sources */,
 				B53DB3BC1544FE1A005B2C92 /* AppDelegate.m in Sources */,
 				B53DB3BF1544FE1A005B2C92 /* RootViewController.m in Sources */,
-				B53DB3C21544FE1A005B2C92 /* HelloWorldLayer.m in Sources */,
+				B53DB3C21544FE1A005B2C92 /* BackgroundLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
