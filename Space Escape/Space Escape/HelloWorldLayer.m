@@ -31,23 +31,54 @@
 // on "init" you need to initialize your instance
 -(id) init
 {
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super" return value
 	if( (self=[super init])) {
-		
-		// create and initialize a Label
-		CCLabelTTF *label = [CCLabelTTF labelWithString:@"Hello World" fontName:@"Marker Felt" fontSize:64];
-
-		// ask director the the window size
-		CGSize size = [[CCDirector sharedDirector] winSize];
-	
-		// position the label on the center of the screen
-		label.position =  ccp( size.width /2 , size.height/2 );
-		
-		// add the label as a child to this Layer
-		[self addChild: label];
+		//create both sprite to handle background
+		background = [CCSprite spriteWithFile:@"background.png"];
+		background2 = [CCSprite spriteWithFile:@"background.png"];
+        
+		//one the screen and second just next to it
+		background.position = ccp(winSize.width/2, winSize.height/2);
+		background2.position = ccp(winSize.width/2, -winSize.height/2);
+        
+		//add schedule to move backgrounds
+		[self schedule:@selector(scroll:)];
+        
+		//ofc add them to main layer
+		[self addChild:background];
+		[self addChild:background2];
 	}
 	return self;
+}
+
+- (void) scroll:(ccTime)dt{
+    
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
+
+    
+	BOOL flg=FALSE;
+    
+	//reset position when they are off from view.
+    if (background.position.y - background.contentSize.height/2 >= winSize.height ) {
+        background.position = ccp(winSize.width/2, -winSize.height/2);
+		background2.position = ccp(winSize.width/2, winSize.height/2);
+		flg =TRUE;
+    }
+    
+	if (background2.position.y - background2.contentSize.height/2>= winSize.height) {
+        background2.position = ccp(winSize.width/2, -winSize.height/2);
+		background.position = ccp(winSize.width/2, winSize.height/2);
+		flg =TRUE;
+    }
+    
+	if (!flg) {
+		//move them 100*dt pixels to left
+		background.position = ccp( background.position.x , background.position.y + 40*dt);
+		background2.position = ccp( background2.position.x , background2.position.y + 40*dt);
+	}
+    
 }
 
 // on "dealloc" you need to release all your retained objects

@@ -13,9 +13,12 @@
 // HelloWorldLayer
 @interface HelloWorldLayer : CCLayer
 {
+    CCSprite *background;
+    CCSprite *background2;
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child
 +(CCScene *) scene;
+- (void) scroll:(ccTime)dt;
 
 @end
