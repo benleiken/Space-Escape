@@ -43,7 +43,7 @@
 		//one the screen and second just next to it
 		background.position = ccp(winSize.width/2, winSize.height/2);
 		background2.position = ccp(winSize.width + background2.contentSize.width/2, winSize.height/2);
-        seeker.position = ccp(10, winSize.height/2);
+        seeker.position = ccp(50, winSize.height/2);
         
 		//add schedule to move backgrounds
 		[self schedule:@selector(scroll:)];
@@ -63,24 +63,24 @@
     
 	BOOL flg=FALSE;
     
-    if (!flg) {
-		//move them 100*dt pixels to left
-		background.position = ccp( background.position.x - 40*dt, background.position.y);
-		background2.position = ccp( background2.position.x  - 40*dt, background2.position.y);
-	}
-    
 	//reset position when they are off from view.
-    if (background.position.x + background.contentSize.width/2 <= 0 ) {
-        background.position = ccp(winSize.width/2 + background.contentSize.width/2, winSize.height/2);
+    if (background.position.x + background.contentSize.width/2 < 0 ) {
+        background.position = ccp(winSize.width + background.contentSize.width/2, winSize.height/2);
 		background2.position = ccp(winSize.width/2, winSize.height/2);
 		flg =TRUE;
     }
 
-	if (background2.position.x + background2.contentSize.width/2 <= 0) {
-        background2.position = ccp(winSize.width/2 + background2.contentSize.width/2, winSize.height/2);
+	if (background2.position.x + background2.contentSize.width/2 < 0) {
+        background2.position = ccp(winSize.width + background2.contentSize.width/2, winSize.height/2);
 		background.position = ccp(winSize.width/2, winSize.height/2);
 		flg =TRUE;
     }
+    
+    if (!flg) {
+		//move them 100*dt pixels to left
+		background.position = ccp( background.position.x - 100*dt, background.position.y);
+		background2.position = ccp( background2.position.x  - 100*dt, background2.position.y);
+	}
     
 }
 
@@ -93,5 +93,7 @@
 	
 	// don't forget to call "super dealloc"
 	[super dealloc];
+    
 }
+
 @end
