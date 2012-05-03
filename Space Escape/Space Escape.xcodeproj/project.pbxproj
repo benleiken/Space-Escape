@@ -118,8 +118,7 @@
 		B53DB3BC1544FE1A005B2C92 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B53DB3BB1544FE1A005B2C92 /* AppDelegate.m */; };
 		B53DB3BF1544FE1A005B2C92 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B53DB3BE1544FE1A005B2C92 /* RootViewController.m */; };
 		B53DB3C21544FE1A005B2C92 /* BackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B53DB3C11544FE1A005B2C92 /* BackgroundLayer.m */; };
-		B556AE65154E47E000D0F1D9 /* Default-LandscapeLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = B556AE64154E47E000D0F1D9 /* Default-LandscapeLeft.png */; };
-		B57979D8154E476D00BF9D82 /* Default-LandscapeRight.png in Resources */ = {isa = PBXBuildFile; fileRef = B57979D7154E476D00BF9D82 /* Default-LandscapeRight.png */; };
+		B56CCBAA1552367E00BAC167 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B56CCBA91552367E00BAC167 /* Default.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -354,8 +353,7 @@
 		B53DB3C01544FE1A005B2C92 /* BackgroundLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BackgroundLayer.h; sourceTree = "<group>"; };
 		B53DB3C11544FE1A005B2C92 /* BackgroundLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BackgroundLayer.m; sourceTree = "<group>"; };
 		B53DB3C31544FE1A005B2C92 /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
-		B556AE64154E47E000D0F1D9 /* Default-LandscapeLeft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-LandscapeLeft.png"; sourceTree = "<group>"; };
-		B57979D7154E476D00BF9D82 /* Default-LandscapeRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-LandscapeRight.png"; sourceTree = "<group>"; };
+		B56CCBA91552367E00BAC167 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -429,10 +427,9 @@
 		B53DB2691544FE14005B2C92 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B57979D7154E476D00BF9D82 /* Default-LandscapeRight.png */,
+				B56CCBA91552367E00BAC167 /* Default.png */,
 				228BC4D5154A9E7000073A0B /* background.png */,
 				B51FF9B9154E408D004F78B9 /* icon.png */,
-				B556AE64154E47E000D0F1D9 /* Default-LandscapeLeft.png */,
 				B53DB26C1544FE14005B2C92 /* fps_images.png */,
 				B53DB27A1544FE14005B2C92 /* Info.plist */,
 				B53DB27B1544FE14005B2C92 /* iTunesArtwork */,
@@ -808,8 +805,7 @@
 				228BC4D6154A9E7000073A0B /* background.png in Resources */,
 				228BC4DC154AA41C00073A0B /* seeker.png in Resources */,
 				B51FF9BA154E408D004F78B9 /* icon.png in Resources */,
-				B57979D8154E476D00BF9D82 /* Default-LandscapeRight.png in Resources */,
-				B556AE65154E47E000D0F1D9 /* Default-LandscapeLeft.png in Resources */,
+				B56CCBAA1552367E00BAC167 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
