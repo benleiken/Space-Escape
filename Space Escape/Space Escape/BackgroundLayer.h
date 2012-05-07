@@ -21,5 +21,6 @@
 // returns a CCScene that contains the BackgroundLayer as the only child
 +(CCScene *) scene;
 - (void) scroll:(ccTime)dt;
+- (void) checkOrientation;
 
 @end

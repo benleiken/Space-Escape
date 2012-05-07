@@ -96,4 +96,18 @@
     
 }
 
+- (void) checkOrientation
+{
+    if([[UIDevice currentDevice] orientation] == kCCDeviceOrientationPortrait) {
+        NSLog(@"Device is now in Portrait Mode");
+    } else if ([[UIDevice currentDevice] orientation] == kCCDeviceOrientationLandscapeLeft) {
+        NSLog(@"Device is now in LandscapeLeft Mode ");
+    } else if ([[UIDevice currentDevice] orientation] == kCCDeviceOrientationLandscapeRight) {
+        NSLog(@"Device is now in LandscapeRight Mode");
+    } else if([[UIDevice currentDevice]orientation] == kCCDeviceOrientationPortraitUpsideDown) {
+        NSLog(@"Device is now in PortraitUpsideDown Mode"); ss="Apple-style-span" style="font-weight: normal;">
+    }
+
+}
+
 @end
