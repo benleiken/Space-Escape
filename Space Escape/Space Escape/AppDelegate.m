@@ -92,8 +92,8 @@
 	[director setDisplayFPS:YES];
 	
 	
-	// make the OpenGLView a child of the view controller
-	[viewController setView:glView];
+    // make the OpenGLView a child of the view controller
+    [[viewController view] addSubview:glView];
 	
 	// make the View Controller a child of the main window
 	[window addSubview: viewController.view];
