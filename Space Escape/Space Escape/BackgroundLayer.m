@@ -42,8 +42,8 @@
         CGSize winSize = [[CCDirector sharedDirector] winSize];
         
 		//create both sprite to handle background
-		background = [CCSprite spriteWithFile:@"background.png"];
-		background2 = [CCSprite spriteWithFile:@"background.png"];
+		background = [CCSprite spriteWithFile:@"se_background.gif"];
+		background2 = [CCSprite spriteWithFile:@"se_background.gif"];
         seeker = [CCSprite spriteWithFile:@"seeker.png"];
         
 		//one the screen and second just next to it
