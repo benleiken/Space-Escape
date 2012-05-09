@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		228BC4D6154A9E7000073A0B /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 228BC4D5154A9E7000073A0B /* background.png */; };
 		228BC4DC154AA41C00073A0B /* seeker.png in Resources */ = {isa = PBXBuildFile; fileRef = 228BC4DB154AA41C00073A0B /* seeker.png */; };
+		229B556D155A4B480052A876 /* running.plist in Resources */ = {isa = PBXBuildFile; fileRef = 229B556B155A4B480052A876 /* running.plist */; };
+		229B556E155A4B480052A876 /* running.png in Resources */ = {isa = PBXBuildFile; fileRef = 229B556C155A4B480052A876 /* running.png */; };
 		B51FF9BA154E408D004F78B9 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B51FF9B9154E408D004F78B9 /* icon.png */; };
 		B53DB2591544FE14005B2C92 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B53DB2581544FE14005B2C92 /* QuartzCore.framework */; };
 		B53DB25B1544FE14005B2C92 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B53DB25A1544FE14005B2C92 /* OpenGLES.framework */; };
@@ -124,6 +126,8 @@
 /* Begin PBXFileReference section */
 		228BC4D5154A9E7000073A0B /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		228BC4DB154AA41C00073A0B /* seeker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = seeker.png; sourceTree = "<group>"; };
+		229B556B155A4B480052A876 /* running.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = running.plist; sourceTree = "<group>"; };
+		229B556C155A4B480052A876 /* running.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = running.png; sourceTree = "<group>"; };
 		B51FF9B9154E408D004F78B9 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		B53DB2541544FE14005B2C92 /* Space Escape.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Escape.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B53DB2581544FE14005B2C92 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -427,6 +431,8 @@
 		B53DB2691544FE14005B2C92 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				229B556B155A4B480052A876 /* running.plist */,
+				229B556C155A4B480052A876 /* running.png */,
 				B56CCBA91552367E00BAC167 /* Default.png */,
 				228BC4D5154A9E7000073A0B /* background.png */,
 				B51FF9B9154E408D004F78B9 /* icon.png */,
@@ -806,6 +812,8 @@
 				228BC4DC154AA41C00073A0B /* seeker.png in Resources */,
 				B51FF9BA154E408D004F78B9 /* icon.png in Resources */,
 				B56CCBAA1552367E00BAC167 /* Default.png in Resources */,
+				229B556D155A4B480052A876 /* running.plist in Resources */,
+				229B556E155A4B480052A876 /* running.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

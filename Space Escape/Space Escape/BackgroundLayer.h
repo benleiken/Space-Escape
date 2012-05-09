@@ -16,11 +16,20 @@
     CCSprite *background;
     CCSprite *background2;
     CCSprite *seeker;
+    
+    CCSprite *_astronaut;
+    CCAction *_running;
+    CCAction *_move;
+    BOOL _moving;
 }
+
+@property (nonatomic, retain) CCSprite *astronaut;
+@property (nonatomic, retain) CCAction *running;
+@property (nonatomic, retain) CCAction *move;
 
 // returns a CCScene that contains the BackgroundLayer as the only child
 +(CCScene *) scene;
 - (void) scroll:(ccTime)dt;
-- (void) checkOrientation;
+- (void) orientationChanged:(NSNotification *)notification;
 
 @end
