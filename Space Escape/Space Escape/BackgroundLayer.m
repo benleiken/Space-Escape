@@ -13,6 +13,10 @@
 // HelloWorldLayer implementation
 @implementation BackgroundLayer
 
+@synthesize astronaut = _astronaut;
+@synthesize running = _running;
+@synthesize move = _move;
+
 +(CCScene *) scene
 {
 	// 'scene' is an autorelease object.
@@ -31,13 +35,15 @@
 // on "init" you need to initialize your instance
 -(id) init
 {
-    CGSize winSize = [[CCDirector sharedDirector] winSize];
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super" return value
-	if( (self=[super init])) {
+	if((self=[super init])) {
+        
+        CGSize winSize = [[CCDirector sharedDirector] winSize];
+        
 		//create both sprite to handle background
-		background = [CCSprite spriteWithFile:@"background.png"];
-		background2 = [CCSprite spriteWithFile:@"background.png"];
+		background = [CCSprite spriteWithFile:@"se_background.gif"];
+		background2 = [CCSprite spriteWithFile:@"se_background.gif"];
         seeker = [CCSprite spriteWithFile:@"seeker.png"];
         
 		//one the screen and second just next to it
@@ -52,6 +58,21 @@
 		[self addChild:background];
 		[self addChild:background2];
         [self addChild:seeker];
+        
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile: @"running.plist"];
+        CCSpriteBatchNode *spriteSheet = [CCSpriteBatchNode batchNodeWithFile:@"running.png"];
+        [self addChild:spriteSheet];
+        NSMutableArray *runningFrames = [NSMutableArray array];
+        for(int i = 1; i <= 8; ++i) {
+            [runningFrames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"running%d.png", i]]];
+        };
+        CCAnimation *runningAnim = [CCAnimation animationWithFrames:runningFrames delay:0.1f];
+        self.astronaut = [CCSprite spriteWithSpriteFrameName:@"running1.png"];        
+        _astronaut.position = ccp(winSize.width/2, winSize.height/2);
+        self.running = [CCRepeatForever actionWithAction:
+                        [CCAnimate actionWithAnimation:runningAnim restoreOriginalFrame:NO]];
+        [_astronaut runAction:_running];
+        [spriteSheet addChild:_astronaut];
 	}
 	return self;
 }
@@ -93,7 +114,24 @@
 	
 	// don't forget to call "super dealloc"
 	[super dealloc];
+    self.astronaut = nil;
+    self.running = nil;
     
+}
+
+- (void) orientationChanged:(NSNotification *)notification
+{
+	UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
+	NSLog(@"orientation: %d" , orientation);
+    
+	if(orientation == UIDeviceOrientationLandscapeLeft)
+	{
+		[[CCDirector sharedDirector] setDeviceOrientation:CCDeviceOrientationLandscapeLeft];
+        
+	} else if(orientation == UIDeviceOrientationLandscapeRight){
+		[[CCDirector sharedDirector] setDeviceOrientation:CCDeviceOrientationLandscapeRight];
+        
+	}
 }
 
 @end
