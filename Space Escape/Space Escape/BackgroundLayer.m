@@ -39,7 +39,7 @@
 
 // on "init" you need to initialize your instance
 -(id) init
-{
+{    
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super" return value
 	if((self=[super init])) {
@@ -53,26 +53,38 @@
 		background2 = [CCSprite spriteWithFile:@"se_background.gif"];
         seeker = [CCSprite spriteWithFile:@"seeker.png"];
         lamp1 = [CCSprite spriteWithFile:@"lamp.png"];
-        box1 = [CCSprite spriteWithFile:@"box.png"];
-        box2 = [CCSprite spriteWithFile:@"box.png"];
-        box3 = [CCSprite spriteWithFile:@"box.png"];
-        box4 = [CCSprite spriteWithFile:@"box.png"];
-        box5 = [CCSprite spriteWithFile:@"box.png"];
+        box1 = [CCSprite spriteWithFile:@"alien.png"];
+        box2 = [CCSprite spriteWithFile:@"alien.png"];
+        box3 = [CCSprite spriteWithFile:@"alien.png"];
+        box4 = [CCSprite spriteWithFile:@"alien.png"];
+        box5 = [CCSprite spriteWithFile:@"alien.png"];
+        platform1 = [CCSprite spriteWithFile:@"platformshort.png"];
+        platform2 = [CCSprite spriteWithFile:@"platformmedium.png"];
+        platform3 = [CCSprite spriteWithFile:@"platformlong.png"];
+        ship = [CCSprite spriteWithFile:@"ship.png"];
+        
+//        endgame = [CCSprite spriteWithFile:@"se_gameover.gif"];
+//        gameover = false;
         
 		//one the screen and second just next to it
 		background.position = ccp(winSize.width/2, winSize.height/2);
 		background2.position = ccp(winSize.width + background2.contentSize.width/2, winSize.height/2);
         seeker.position = ccp(winSize.width + 300, winSize.height/2);
         lamp1.position = ccp(winSize.width + 450, winSize.height - lamp1.contentSize.height/2);
-        box1.position = ccp(winSize.width + 500, 100);
-        box2.position = ccp(winSize.width + 1000, 100);
-        box3.position = ccp(winSize.width + 1500, 100);
-        box4.position = ccp(winSize.width + 2000, 100);
+        box1.position = ccp(winSize.width + 450, 100);
+        box2.position = ccp(winSize.width + 800, 100);
+        box3.position = ccp(winSize.width + 1500, 200);
+        box4.position = ccp(winSize.width + 900, 100);
         box5.position = ccp(winSize.width + 2500, 100);
+        platform1.position = ccp(winSize.width + 450, 150);
+        platform2.position = ccp(winSize.width + 800, 250);
+        platform3.position = ccp(winSize.width + 1500, 150);
+        ship.position = ccp(winSize.width + 4000, winSize.height-ship.contentSize.height/2);
         
 		//add schedule to move backgrounds
 		[self schedule:@selector(scroll:)];
         [self schedule:@selector(collisiondetection)];
+        [self schedule:@selector(check)];
         
 		//ofc add them to main layer
 		[self addChild:background];
@@ -84,8 +96,14 @@
         [self addChild:box3];
         [self addChild:box4];
         [self addChild:box5];
+        [self addChild:platform1];
+        [self addChild:platform2];
+        [self addChild:platform3];
+        [self addChild:ship];
                 
-        _isRunning = TRUE;
+        _isRunning   = TRUE;
+        _jumpingbool = FALSE;
+        _onplatform  = FALSE;
         clicks = 0;
         
         // running action
@@ -109,9 +127,58 @@
         
         
         self.isAccelerometerEnabled = YES;
-
+        
+        platforms = [[CCArray alloc] initWithCapacity:3];
+        [platforms addObject:platform1];
+        [platforms addObject:platform2];
+        [platforms addObject:platform3];
+        
 	}
 	return self;
+}
+
+-(void) check{
+    
+    CGRect astro_rect = [_astronaut boundingBox];
+    CGRect plat1_rect = [platform1 boundingBox];
+    CGRect plat2_rect = [platform2 boundingBox];
+    CGRect plat3_rect = [platform3 boundingBox];
+
+    
+    
+    if(CGRectIntersectsRect(astro_rect, plat1_rect)){
+        _astronaut.position = ccp(50, 185);
+        _jumpingbool = FALSE;
+    }
+    else if(CGRectIntersectsRect(astro_rect, plat3_rect)){
+        _astronaut.position = ccp(50, 185);
+        _jumpingbool = FALSE;
+    }
+    else if(CGRectIntersectsRect(astro_rect, plat2_rect)){
+        _astronaut.position = ccp(50, 285);
+        _jumpingbool = FALSE;
+    }
+    else if(_jumpingbool == FALSE && _astronaut.position.y > 100){
+        _astronaut.position = ccp(_astronaut.position.x, _astronaut.position.y - 10);
+    }
+    
+    if(_jumpingbool){
+        if(_astronaut.position.y > 100){
+            yvel -= .2;
+        }
+        else{
+            if(yvel != 6){
+                yvel = 0;
+            }
+        }
+        
+        _astronaut.position = ccp(_astronaut.position.x, _astronaut.position.y + yvel);
+        
+        if(_astronaut.position.y == 100){
+            _jumpingbool = FALSE;
+        }
+    }
+    
 }
 
 -(void) registerWithTouchDispatcher
@@ -121,17 +188,11 @@
 }
 
 -(BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
+    yvel = 6;
+    _jumpingbool = TRUE;
+    _astronaut.position = ccp(_astronaut.position.x, _astronaut.position.y + 15);
 	return YES;
 }
-
--(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event {
-    if (_astronaut.position.y == 100){
-        id jump = [CCJumpBy actionWithDuration:1 position:ccp(10,0) height:150 jumps:1];
-        [_astronaut runAction:jump];
-        _astronaut.position = ccp( _astronaut.position.x - 10, _astronaut.position.y);
-    }
-}
-
 
 - (void) scroll:(ccTime)dt{
     
@@ -163,6 +224,11 @@
         box3.position = ccp( box3.position.x - 170*dt, box3.position.y );
         box4.position = ccp( box4.position.x - 170*dt, box4.position.y );
         box5.position = ccp( box5.position.x - 170*dt, box5.position.y );
+        platform1.position = ccp( platform1.position.x - 170*dt, platform1.position.y );
+        platform2.position = ccp( platform2.position.x - 170*dt, platform2.position.y );
+        platform3.position = ccp( platform3.position.x - 170*dt, platform3.position.y );
+        ship.position = ccp( ship.position.x - 170*dt, ship.position.y );
+
 	}
     
     float maxY = winSize.height - _astronaut.contentSize.height/2;
@@ -214,26 +280,59 @@
     CGRect box4Rect = [box4 boundingBox];
     CGRect box5Rect = [box5 boundingBox];
     
+    CGRect shipRect = [ship boundingBox];
+    
     if (CGRectIntersectsRect(astroRect, box1Rect)) {
         //[fichiersToDelete addObject:fichier];
-        _astronaut.position = ccp( 200, 200 );
+//        _astronaut.position = ccp( 200, 200 );
+        [self gameover];
     }
     if (CGRectIntersectsRect(astroRect, box2Rect)) {
         //[fichiersToDelete addObject:fichier];
-        _astronaut.position = ccp( 200, 200 );
+//        _astronaut.position = ccp( 200, 200 );
+        [self gameover];
     }
     if (CGRectIntersectsRect(astroRect, box3Rect)) {
         //[fichiersToDelete addObject:fichier];
-        _astronaut.position = ccp( 200, 200 );
+//        _astronaut.position = ccp( 200, 200 );
+        [self gameover];
     }
     if (CGRectIntersectsRect(astroRect, box4Rect)) {
         //[fichiersToDelete addObject:fichier];
-        _astronaut.position = ccp( 200, 200 );
+//        _astronaut.position = ccp( 200, 200 );
+        [self gameover];
     }
     if (CGRectIntersectsRect(astroRect, box5Rect)) {
         //[fichiersToDelete addObject:fichier];
-        _astronaut.position = ccp( 200, 200 );
+//        _astronaut.position = ccp( 200, 200 );
+        [self gameover];
     }
+    if (CGRectIntersectsRect(astroRect, shipRect)) {
+        [self youwin];
+    }
+}
+
+-(void)gameover {
+        
+    NSString *message;
+    message = @"GAMEOVER";
+    
+    [_astronaut removeFromParentAndCleanup:YES];
+    CCLabelTTF *label;
+    label = [CCLabelTTF labelWithString:message fontName:@"Helvetica" fontSize:24];
+    label.position = ccp(200,200);
+    [self addChild:label];
+}
+
+-(void) youwin {
+    NSString *message;
+    message = @"YOU WIN! FULL GAME COMING SOON!";
+    
+    [_astronaut removeFromParentAndCleanup:YES];
+    CCLabelTTF *label;
+    label = [CCLabelTTF labelWithString:message fontName:@"Helvetica" fontSize:24];
+    label.position = ccp(250,200);
+    [self addChild:label];
 }
 
 // on "dealloc" you need to release all your retained objects

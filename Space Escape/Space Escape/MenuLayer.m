@@ -14,11 +14,7 @@
 -(id) init{
 	self = [super init];
     
-	CCLabelTTF *titleLeft = [CCLabelTTF labelWithString:@"Menu " fontName:@"Marker Felt" fontSize:48];
-	CCLabelTTF *titleRight = [CCLabelTTF labelWithString:@" System" fontName:@"Marker Felt" fontSize:48];
-	CCLabelTTF *titleQuotes = [CCLabelTTF labelWithString:@"\"                        \"" fontName:@"Marker Felt" fontSize:48];
-	CCLabelTTF *titleCenterTop = [CCLabelTTF labelWithString:@"How to build a..." fontName:@"Marker Felt" fontSize:26];
-	CCLabelTTF *titleCenterBottom = [CCLabelTTF labelWithString:@"Part 2" fontName:@"Marker Felt" fontSize:48];
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
 	
 	float delayTime = 0.3f;
 	
@@ -39,38 +35,38 @@
 		[each runAction: action];
 	}
 	
-    CCSprite *bg = [CCSprite spriteWithFile:@"se_mainmenu.gif"];
-    bg.position = ccp(160,320);
+    CCSprite *bg = [CCSprite spriteWithFile:@"se_menu.gif"];
+    bg.position = ccp(winSize.width/2,winSize.height/2);
     [self addChild:bg];
     
-	titleCenterTop.position = ccp(160, 380);
-	[self addChild: titleCenterTop];
+//	titleCenterTop.position = ccp(160, 380);
+//	[self addChild: titleCenterTop];
+//	
+//	titleCenterBottom.position = ccp(160, 300);
+//	[self addChild: titleCenterBottom];
+//	
+//	titleQuotes.position = ccp(160, 345);
+//	[self addChild: titleQuotes];
+//	
+//	titleLeft.position = ccp(80, -80);
+//	CCAction *titleLeftAction = [CCSequence actions:
+//								 [CCDelayTime actionWithDuration: delayTime],
+//								 [CCEaseBackOut actionWithAction:
+//								  [CCMoveTo actionWithDuration: 1.0 position:ccp(80,345)]],
+//								 nil];
+//	[self addChild: titleLeft];
+//	[titleLeft runAction: titleLeftAction];
+//	
+//	titleRight.position = ccp(220, 520);
+//	CCAction *titleRightAction = [CCSequence actions:
+//								  [CCDelayTime actionWithDuration: delayTime],
+//								  [CCEaseBackOut actionWithAction:
+//								   [CCMoveTo actionWithDuration: 1.0 position:ccp(220,345)]],
+//								  nil];
+//	[self addChild: titleRight];
+//	[titleRight runAction: titleRightAction];
 	
-	titleCenterBottom.position = ccp(160, 300);
-	[self addChild: titleCenterBottom];
-	
-	titleQuotes.position = ccp(160, 345);
-	[self addChild: titleQuotes];
-	
-	titleLeft.position = ccp(80, -80);
-	CCAction *titleLeftAction = [CCSequence actions:
-								 [CCDelayTime actionWithDuration: delayTime],
-								 [CCEaseBackOut actionWithAction:
-								  [CCMoveTo actionWithDuration: 1.0 position:ccp(80,345)]],
-								 nil];
-	[self addChild: titleLeft];
-	[titleLeft runAction: titleLeftAction];
-	
-	titleRight.position = ccp(220, 520);
-	CCAction *titleRightAction = [CCSequence actions:
-								  [CCDelayTime actionWithDuration: delayTime],
-								  [CCEaseBackOut actionWithAction:
-								   [CCMoveTo actionWithDuration: 1.0 position:ccp(220,345)]],
-								  nil];
-	[self addChild: titleRight];
-	[titleRight runAction: titleRightAction];
-	
-	menu.position = ccp(160, 200);
+	menu.position = ccp(160, 75);
 	[menu alignItemsVerticallyWithPadding: 40.0f];
 	[self addChild:menu z: 2];
 	
