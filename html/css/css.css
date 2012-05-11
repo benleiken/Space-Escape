@@ -50,13 +50,24 @@ body {
     margin: 0 auto;
     width: 960px;
     background-color:black;
+    color:grey;
+    font-family: "Rockwell";
 }
 header {
     width: 960px;
     padding-top: 50px;
+    padding-bottom: 50px;
     margin: 0 auto;
     text-align:center;
-    	font-family: "Rockwell";
 	font-size: 100px;
-	    color:grey;
+	color:yellow;
+}
+h1 {
+  font-size: 50px;
+  padding-bottom: 10px;
+}
+section {
+    margin: 0 auto;
+    text-align:center;
+    width:960px;
 }
