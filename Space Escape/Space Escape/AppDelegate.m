@@ -5,14 +5,11 @@
 //  Created by Ben Leiken on 4/22/12.
 //  Copyright Tufts 2012. All rights reserved.
 //
-
 #import "cocos2d.h"
-
 #import "AppDelegate.h"
 #import "GameConfig.h"
-#import "BackgroundLayer.h"
 #import "RootViewController.h"
-
+#import "SceneManager.h"
 @implementation AppDelegate
 
 @synthesize window;
@@ -110,7 +107,8 @@
 	[self removeStartupFlicker];
 	
 	// Run the intro Scene
-	[[CCDirector sharedDirector] runWithScene: [BackgroundLayer scene]];
+    [SceneManager goMenu];
+	//[[CCDirector sharedDirector] runWithScene: [BackgroundLayer scene]];
 }
 
 
