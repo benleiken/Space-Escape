@@ -87,7 +87,6 @@
 		//ofc add them to main layer
 		[self addChild:background];
 		[self addChild:background2];
-        [self addChild:seeker];
         [self addChild:lamp1];
         [self addChild:box1];
         [self addChild:box2];

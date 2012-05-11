@@ -67,7 +67,7 @@
 +(CCScene *) scene;
 - (void) scroll:(ccTime)dt;
 - (void) collisiondetection;
--(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event;
+//-(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event;
 -(BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event;
 -(void) registerWithTouchDispatcher;
 -(void) check;
