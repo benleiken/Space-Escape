@@ -10,6 +10,8 @@
 // Import the interfaces
 #import "BackgroundLayer.h"
 
+#define kNumEnemies 15
+#define kNumBoxes 15
 
 // HelloWorldLayer implementation
 @implementation BackgroundLayer
@@ -43,7 +45,7 @@
 	if((self=[super init])) {
         
         self.isTouchEnabled = YES;
-        
+                
         CGSize winSize = [[CCDirector sharedDirector] winSize];
         
 		//create both sprite to handle background
@@ -53,6 +55,9 @@
         lamp1 = [CCSprite spriteWithFile:@"lamp.png"];
         box1 = [CCSprite spriteWithFile:@"box.png"];
         box2 = [CCSprite spriteWithFile:@"box.png"];
+        box3 = [CCSprite spriteWithFile:@"box.png"];
+        box4 = [CCSprite spriteWithFile:@"box.png"];
+        box5 = [CCSprite spriteWithFile:@"box.png"];
         
 		//one the screen and second just next to it
 		background.position = ccp(winSize.width/2, winSize.height/2);
@@ -61,6 +66,9 @@
         lamp1.position = ccp(winSize.width + 450, winSize.height - lamp1.contentSize.height/2);
         box1.position = ccp(winSize.width + 500, 100);
         box2.position = ccp(winSize.width + 1000, 100);
+        box3.position = ccp(winSize.width + 1500, 100);
+        box4.position = ccp(winSize.width + 2000, 100);
+        box5.position = ccp(winSize.width + 2500, 100);
         
 		//add schedule to move backgrounds
 		[self schedule:@selector(scroll:)];
@@ -73,7 +81,10 @@
         [self addChild:lamp1];
         [self addChild:box1];
         [self addChild:box2];
-        
+        [self addChild:box3];
+        [self addChild:box4];
+        [self addChild:box5];
+                
         _isRunning = TRUE;
         clicks = 0;
         
@@ -92,6 +103,13 @@
                         [CCAnimate actionWithAnimation:runningAnim restoreOriginalFrame:NO]];
         [_astronaut runAction:_running];
         [spriteSheet addChild:_astronaut];
+        
+        xvel = 0;
+        yvel = 0;
+        
+        
+        self.isAccelerometerEnabled = YES;
+
 	}
 	return self;
 }
@@ -106,11 +124,11 @@
 	return YES;
 }
 
--(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event { 
+-(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event {
     if (_astronaut.position.y == 100){
-        id jump = [CCJumpBy actionWithDuration:3 position:ccp(0, 0) 
-                                        height:100 jumps:1];
+        id jump = [CCJumpBy actionWithDuration:1 position:ccp(10,0) height:150 jumps:1];
         [_astronaut runAction:jump];
+        _astronaut.position = ccp( _astronaut.position.x - 10, _astronaut.position.y);
     }
 }
 
@@ -118,7 +136,6 @@
 - (void) scroll:(ccTime)dt{
     
     CGSize winSize = [[CCDirector sharedDirector] winSize];
-    
     
 	BOOL flg=FALSE;
     
@@ -137,27 +154,83 @@
     
     if (!flg) {
 		//move them 100*dt pixels to left
-		background.position = ccp( background.position.x - 100*dt, background.position.y);
-		background2.position = ccp( background2.position.x  - 100*dt, background2.position.y);
-        seeker.position = ccp( seeker.position.x - 100*dt, seeker.position.y );
-        lamp1.position = ccp( lamp1.position.x - 100*dt, lamp1.position.y );
-        box1.position = ccp( box1.position.x - 100*dt, box1.position.y );
-        box2.position = ccp( box2.position.x - 100*dt, box2.position.y );
+		background.position = ccp( background.position.x - 170*dt, background.position.y);
+		background2.position = ccp( background2.position.x  - 170*dt, background2.position.y);
+        seeker.position = ccp( seeker.position.x - 170*dt, seeker.position.y );
+        lamp1.position = ccp( lamp1.position.x - 170*dt, lamp1.position.y );
+        box1.position = ccp( box1.position.x - 170*dt, box1.position.y );
+        box2.position = ccp( box2.position.x - 170*dt, box2.position.y );
+        box3.position = ccp( box3.position.x - 170*dt, box3.position.y );
+        box4.position = ccp( box4.position.x - 170*dt, box4.position.y );
+        box5.position = ccp( box5.position.x - 170*dt, box5.position.y );
 	}
     
+    float maxY = winSize.height - _astronaut.contentSize.height/2;
+    float minY = _astronaut.contentSize.height/2;
+    
+    float newY = _astronaut.position.y + (_astroPointsPerSecY * dt);
+    newY = MIN(MAX(newY, minY), maxY);
+    _astronaut.position = ccp(_astronaut.position.x, newY);
+    
 }
+
+- (void)setInvisible:(CCNode *)node {
+    node.visible = NO;
+}
+
+//- (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration {
+//    
+//#define kFilteringFactor 0.1
+//#define kRestAccelX -0.6
+//#define kShipMaxPointsPerSec (winSize.height*0.5)        
+//#define kMaxDiffX 0.2
+//    
+//    UIAccelerationValue rollingX, rollingY, rollingZ;
+//    
+//    rollingX = (acceleration.x * kFilteringFactor) + (rollingX * (1.0 - kFilteringFactor));    
+//    rollingY = (acceleration.y * kFilteringFactor) + (rollingY * (1.0 - kFilteringFactor));    
+//    rollingZ = (acceleration.z * kFilteringFactor) + (rollingZ * (1.0 - kFilteringFactor));
+//    
+//    float accelX = acceleration.x - rollingX;
+//    float accelY = acceleration.y - rollingY;
+//    float accelZ = acceleration.z - rollingZ;
+//    
+//    CGSize winSize = [CCDirector sharedDirector].winSize;
+//    
+//    float accelDiff = accelX - kRestAccelX;
+//    float accelFraction = accelDiff / kMaxDiffX;
+//    float pointsPerSec = kShipMaxPointsPerSec * accelFraction;
+//    
+//    _astroPointsPerSecY = pointsPerSec;
+//    
+//}
 
 - (void) collisiondetection
 {
     CGRect astroRect = [_astronaut boundingBox];
     CGRect box1Rect = [box1 boundingBox];
     CGRect box2Rect = [box2 boundingBox];
+    CGRect box3Rect = [box3 boundingBox];
+    CGRect box4Rect = [box4 boundingBox];
+    CGRect box5Rect = [box5 boundingBox];
     
     if (CGRectIntersectsRect(astroRect, box1Rect)) {
         //[fichiersToDelete addObject:fichier];
         _astronaut.position = ccp( 200, 200 );
     }
     if (CGRectIntersectsRect(astroRect, box2Rect)) {
+        //[fichiersToDelete addObject:fichier];
+        _astronaut.position = ccp( 200, 200 );
+    }
+    if (CGRectIntersectsRect(astroRect, box3Rect)) {
+        //[fichiersToDelete addObject:fichier];
+        _astronaut.position = ccp( 200, 200 );
+    }
+    if (CGRectIntersectsRect(astroRect, box4Rect)) {
+        //[fichiersToDelete addObject:fichier];
+        _astronaut.position = ccp( 200, 200 );
+    }
+    if (CGRectIntersectsRect(astroRect, box5Rect)) {
         //[fichiersToDelete addObject:fichier];
         _astronaut.position = ccp( 200, 200 );
     }

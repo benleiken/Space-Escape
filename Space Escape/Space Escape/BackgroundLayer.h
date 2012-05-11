@@ -21,6 +21,9 @@
     CCSprite *lamp1;
     CCSprite *box1;
     CCSprite *box2;
+    CCSprite *box3;
+    CCSprite *box4;
+    CCSprite *box5;
     
     CCSprite *_astronaut;
     CCAction *_running;
@@ -30,7 +33,19 @@
     BOOL _jumpingbool;
     
     float yvel;
+    float xvel;
     float clicks;
+    
+    float _astroPointsPerSecY;
+    
+    CCArray *_enemies;
+    CCArray *_boxes;
+    int _nextEnemy;
+    int _nextBox;
+    double _nextEnemySpawn;
+    double _nextBoxSpawn;
+    
+    CCSpriteBatchNode *_batchNode;
 }
 
 @property (nonatomic, retain) CCSprite *astronaut;
