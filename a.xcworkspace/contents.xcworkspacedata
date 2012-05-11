@@ -1,0 +1,767 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:Space Escape1/Space Escape/AppDelegate.h">
+   </FileRef>
+   <FileRef
+      location = "group:Space Escape1/Space Escape/AppDelegate.m">
+   </FileRef>
+   <FileRef
+      location = "group:Space Escape1/Space Escape/background.png">
+   </FileRef>
+   <FileRef
+      location = "group:Space Escape1/Space Escape/BackgroundLayer.h">
+   </FileRef>
+   <FileRef
+      location = "group:Space Escape1/Space Escape/BackgroundLayer.m">
+   </FileRef>
+   <FileRef
+      location = "group:Space Escape1/Space Escape/box.png">
+   </FileRef>
+   <FileRef
+      location = "group:Space Escape1/Space Escape/Default.png">
+   </FileRef>
+   <FileRef
+      location = "group:Space Escape1/Space Escape/GameConfig.h">
+   </FileRef>
+   <FileRef
+      location = "group:Space Escape1/Space Escape/icon.png">
+   </FileRef>
+   <FileRef
+      location = "group:Space Escape1/Space Escape/jumping.plist">
+   </FileRef>
+   <FileRef
+      location = "group:Space Escape1/Space Escape/jumping.png">
+   </FileRef>
+   <FileRef
+      location = "group:Space Escape1/Space Escape/lamp.png">
+   </FileRef>
+   <Group
+      location = "group:Space Escape1/Space Escape/libs"
+      name = "libs">
+      <Group
+         location = "group:cocos2d"
+         name = "cocos2d">
+         <FileRef
+            location = "group:CCAction.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCAction.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCActionCamera.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCActionCamera.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCActionEase.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCActionEase.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCActionGrid.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCActionGrid.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCActionGrid3D.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCActionGrid3D.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCActionInstant.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCActionInstant.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCActionInterval.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCActionInterval.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCActionManager.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCActionManager.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCActionPageTurn3D.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCActionPageTurn3D.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCActionProgressTimer.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCActionProgressTimer.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCActionTiledGrid.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCActionTiledGrid.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCActionTween.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCActionTween.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCAnimation.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCAnimation.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCAnimationCache.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCAnimationCache.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCAtlasNode.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCAtlasNode.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCBlockSupport.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCBlockSupport.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCCamera.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCCamera.m">
+         </FileRef>
+         <FileRef
+            location = "group:ccConfig.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCConfiguration.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCConfiguration.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCDirector.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCDirector.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCDrawingPrimitives.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCDrawingPrimitives.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCGrabber.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCGrabber.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCGrid.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCGrid.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCLabelAtlas.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCLabelAtlas.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCLabelBMFont.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCLabelBMFont.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCLabelTTF.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCLabelTTF.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCLayer.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCLayer.m">
+         </FileRef>
+         <FileRef
+            location = "group:ccMacros.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCMenu.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCMenu.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCMenuItem.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCMenuItem.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCMotionStreak.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCMotionStreak.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCNode.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCNode.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCParallaxNode.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCParallaxNode.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCParticleExamples.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCParticleExamples.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCParticleSystem.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCParticleSystem.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCParticleSystemPoint.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCParticleSystemPoint.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCParticleSystemQuad.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCParticleSystemQuad.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCProgressTimer.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCProgressTimer.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCProtocols.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCRenderTexture.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCRenderTexture.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCRibbon.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCRibbon.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCScene.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCScene.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCScheduler.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCScheduler.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCSprite.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCSprite.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCSpriteBatchNode.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCSpriteBatchNode.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCSpriteFrame.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCSpriteFrame.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCSpriteFrameCache.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCSpriteFrameCache.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCTexture2D.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCTexture2D.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCTextureAtlas.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCTextureAtlas.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCTextureCache.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCTextureCache.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCTexturePVR.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCTexturePVR.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCTileMapAtlas.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCTileMapAtlas.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCTMXLayer.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCTMXLayer.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCTMXObjectGroup.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCTMXObjectGroup.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCTMXTiledMap.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCTMXTiledMap.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCTMXXMLParser.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCTMXXMLParser.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCTransition.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCTransition.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCTransitionPageTurn.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCTransitionPageTurn.m">
+         </FileRef>
+         <FileRef
+            location = "group:CCTransitionRadial.h">
+         </FileRef>
+         <FileRef
+            location = "group:CCTransitionRadial.m">
+         </FileRef>
+         <FileRef
+            location = "group:ccTypes.h">
+         </FileRef>
+         <FileRef
+            location = "group:cocos2d.h">
+         </FileRef>
+         <FileRef
+            location = "group:cocos2d.m">
+         </FileRef>
+         <Group
+            location = "group:Platforms"
+            name = "Platforms">
+            <FileRef
+               location = "group:CCGL.h">
+            </FileRef>
+            <FileRef
+               location = "group:CCNS.h">
+            </FileRef>
+            <Group
+               location = "group:iOS"
+               name = "iOS">
+               <FileRef
+                  location = "group:CCDirectorIOS.h">
+               </FileRef>
+               <FileRef
+                  location = "group:CCDirectorIOS.m">
+               </FileRef>
+               <FileRef
+                  location = "group:CCTouchDelegateProtocol.h">
+               </FileRef>
+               <FileRef
+                  location = "group:CCTouchDispatcher.h">
+               </FileRef>
+               <FileRef
+                  location = "group:CCTouchDispatcher.m">
+               </FileRef>
+               <FileRef
+                  location = "group:CCTouchHandler.h">
+               </FileRef>
+               <FileRef
+                  location = "group:CCTouchHandler.m">
+               </FileRef>
+               <FileRef
+                  location = "group:EAGLView.h">
+               </FileRef>
+               <FileRef
+                  location = "group:EAGLView.m">
+               </FileRef>
+               <FileRef
+                  location = "group:ES1Renderer.h">
+               </FileRef>
+               <FileRef
+                  location = "group:ES1Renderer.m">
+               </FileRef>
+               <FileRef
+                  location = "group:ESRenderer.h">
+               </FileRef>
+               <FileRef
+                  location = "group:glu.c">
+               </FileRef>
+               <FileRef
+                  location = "group:glu.h">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:Mac"
+               name = "Mac">
+               <FileRef
+                  location = "group:CCDirectorMac.h">
+               </FileRef>
+               <FileRef
+                  location = "group:CCDirectorMac.m">
+               </FileRef>
+               <FileRef
+                  location = "group:CCEventDispatcher.h">
+               </FileRef>
+               <FileRef
+                  location = "group:CCEventDispatcher.m">
+               </FileRef>
+               <FileRef
+                  location = "group:MacGLView.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MacGLView.m">
+               </FileRef>
+               <FileRef
+                  location = "group:MacWindow.h">
+               </FileRef>
+               <FileRef
+                  location = "group:MacWindow.m">
+               </FileRef>
+            </Group>
+         </Group>
+         <Group
+            location = "group:Support"
+            name = "Support">
+            <FileRef
+               location = "group:base64.c">
+            </FileRef>
+            <FileRef
+               location = "group:base64.h">
+            </FileRef>
+            <FileRef
+               location = "group:CCArray.h">
+            </FileRef>
+            <FileRef
+               location = "group:CCArray.m">
+            </FileRef>
+            <FileRef
+               location = "group:ccCArray.h">
+            </FileRef>
+            <FileRef
+               location = "group:CCFileUtils.h">
+            </FileRef>
+            <FileRef
+               location = "group:CCFileUtils.m">
+            </FileRef>
+            <FileRef
+               location = "group:CCProfiling.h">
+            </FileRef>
+            <FileRef
+               location = "group:CCProfiling.m">
+            </FileRef>
+            <FileRef
+               location = "group:ccUtils.c">
+            </FileRef>
+            <FileRef
+               location = "group:ccUtils.h">
+            </FileRef>
+            <FileRef
+               location = "group:CGPointExtension.h">
+            </FileRef>
+            <FileRef
+               location = "group:CGPointExtension.m">
+            </FileRef>
+            <FileRef
+               location = "group:OpenGL_Internal.h">
+            </FileRef>
+            <FileRef
+               location = "group:TGAlib.h">
+            </FileRef>
+            <FileRef
+               location = "group:TGAlib.m">
+            </FileRef>
+            <FileRef
+               location = "group:TransformUtils.h">
+            </FileRef>
+            <FileRef
+               location = "group:TransformUtils.m">
+            </FileRef>
+            <FileRef
+               location = "group:uthash.h">
+            </FileRef>
+            <FileRef
+               location = "group:utlist.h">
+            </FileRef>
+            <FileRef
+               location = "group:ZipUtils.h">
+            </FileRef>
+            <FileRef
+               location = "group:ZipUtils.m">
+            </FileRef>
+         </Group>
+      </Group>
+      <Group
+         location = "group:CocosDenshion"
+         name = "CocosDenshion">
+         <FileRef
+            location = "group:CDAudioManager.h">
+         </FileRef>
+         <FileRef
+            location = "group:CDAudioManager.m">
+         </FileRef>
+         <FileRef
+            location = "group:CDConfig.h">
+         </FileRef>
+         <FileRef
+            location = "group:CDOpenALSupport.h">
+         </FileRef>
+         <FileRef
+            location = "group:CDOpenALSupport.m">
+         </FileRef>
+         <FileRef
+            location = "group:CocosDenshion.h">
+         </FileRef>
+         <FileRef
+            location = "group:CocosDenshion.m">
+         </FileRef>
+         <FileRef
+            location = "group:SimpleAudioEngine.h">
+         </FileRef>
+         <FileRef
+            location = "group:SimpleAudioEngine.m">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:cocoslive"
+         name = "cocoslive">
+         <FileRef
+            location = "group:CLScoreServerPost.h">
+         </FileRef>
+         <FileRef
+            location = "group:CLScoreServerPost.m">
+         </FileRef>
+         <FileRef
+            location = "group:CLScoreServerRequest.h">
+         </FileRef>
+         <FileRef
+            location = "group:CLScoreServerRequest.m">
+         </FileRef>
+         <FileRef
+            location = "group:cocoslive.h">
+         </FileRef>
+         <FileRef
+            location = "group:cocoslive.m">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:FontLabel"
+         name = "FontLabel">
+         <FileRef
+            location = "group:FontLabel.h">
+         </FileRef>
+         <FileRef
+            location = "group:FontLabel.m">
+         </FileRef>
+         <FileRef
+            location = "group:FontLabelStringDrawing.h">
+         </FileRef>
+         <FileRef
+            location = "group:FontLabelStringDrawing.m">
+         </FileRef>
+         <FileRef
+            location = "group:FontManager.h">
+         </FileRef>
+         <FileRef
+            location = "group:FontManager.m">
+         </FileRef>
+         <FileRef
+            location = "group:ZAttributedString.h">
+         </FileRef>
+         <FileRef
+            location = "group:ZAttributedString.m">
+         </FileRef>
+         <FileRef
+            location = "group:ZAttributedStringPrivate.h">
+         </FileRef>
+         <FileRef
+            location = "group:ZFont.h">
+         </FileRef>
+         <FileRef
+            location = "group:ZFont.m">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:LICENSE_cocos2d.txt">
+      </FileRef>
+      <FileRef
+         location = "group:LICENSE_CocosDenshion.txt">
+      </FileRef>
+      <FileRef
+         location = "group:LICENSE_FontLabel.txt">
+      </FileRef>
+      <FileRef
+         location = "group:LICENSE_TouchJSON.txt">
+      </FileRef>
+      <Group
+         location = "group:TouchJSON"
+         name = "TouchJSON">
+         <FileRef
+            location = "group:CDataScanner.h">
+         </FileRef>
+         <FileRef
+            location = "group:CDataScanner.m">
+         </FileRef>
+         <Group
+            location = "group:Extensions"
+            name = "Extensions">
+            <FileRef
+               location = "group:CDataScanner_Extensions.h">
+            </FileRef>
+            <FileRef
+               location = "group:CDataScanner_Extensions.m">
+            </FileRef>
+            <FileRef
+               location = "group:NSDictionary_JSONExtensions.h">
+            </FileRef>
+            <FileRef
+               location = "group:NSDictionary_JSONExtensions.m">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:JSON"
+            name = "JSON">
+            <FileRef
+               location = "group:CJSONDeserializer.h">
+            </FileRef>
+            <FileRef
+               location = "group:CJSONDeserializer.m">
+            </FileRef>
+            <FileRef
+               location = "group:CJSONScanner.h">
+            </FileRef>
+            <FileRef
+               location = "group:CJSONScanner.m">
+            </FileRef>
+            <FileRef
+               location = "group:CJSONSerializer.h">
+            </FileRef>
+            <FileRef
+               location = "group:CJSONSerializer.m">
+            </FileRef>
+            <FileRef
+               location = "group:JSONRepresentation.h">
+            </FileRef>
+         </Group>
+      </Group>
+   </Group>
+   <FileRef
+      location = "group:Space Escape1/Space Escape/main.m">
+   </FileRef>
+   <FileRef
+      location = "group:Space Escape1/Space Escape/MenuLayer.h">
+   </FileRef>
+   <FileRef
+      location = "group:Space Escape1/Space Escape/MenuLayer.m">
+   </FileRef>
+   <FileRef
+      location = "group:Space Escape1/Space Escape/Prefix.pch">
+   </FileRef>
+   <Group
+      location = "group:Space Escape1/Space Escape/Resources"
+      name = "Resources">
+      <FileRef
+         location = "group:fps_images.png">
+      </FileRef>
+      <FileRef
+         location = "group:Info.plist">
+      </FileRef>
+      <FileRef
+         location = "group:iTunesArtwork">
+      </FileRef>
+   </Group>
+   <FileRef
+      location = "group:Space Escape1/Space Escape/RootViewController.h">
+   </FileRef>
+   <FileRef
+      location = "group:Space Escape1/Space Escape/RootViewController.m">
+   </FileRef>
+   <FileRef
+      location = "group:Space Escape1/Space Escape/running.plist">
+   </FileRef>
+   <FileRef
+      location = "group:Space Escape1/Space Escape/running.png">
+   </FileRef>
+   <FileRef
+      location = "group:Space Escape1/Space Escape/SceneManager.h">
+   </FileRef>
+   <FileRef
+      location = "group:Space Escape1/Space Escape/SceneManager.m">
+   </FileRef>
+   <FileRef
+      location = "group:Space Escape1/Space Escape/se_controls.gif">
+   </FileRef>
+   <FileRef
+      location = "group:Space Escape1/Space Escape/se_gameover.gif">
+   </FileRef>
+   <FileRef
+      location = "group:Space Escape1/Space Escape/se_mainmenu.gif">
+   </FileRef>
+   <FileRef
+      location = "group:Space Escape1/Space Escape/seeker.png">
+   </FileRef>
+   <FileRef
+      location = "container:Space Escape/Space Escape.xcodeproj">
+   </FileRef>
+</Workspace>
