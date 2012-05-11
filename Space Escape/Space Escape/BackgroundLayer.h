@@ -17,19 +17,29 @@
     CCSprite *background2;
     CCSprite *seeker;
     
+    // objects to avoid
+    CCSprite *lamp1;
+    CCSprite *box1;
+    
     CCSprite *_astronaut;
     CCAction *_running;
+    CCAction *_jumping;
     CCAction *_move;
-    BOOL _moving;
+    BOOL _isRunning;
+    BOOL _jumpingbool;
+    
+    float yvel;
+    float clicks;
 }
 
 @property (nonatomic, retain) CCSprite *astronaut;
 @property (nonatomic, retain) CCAction *running;
+@property (nonatomic, retain) CCAction *jumping;
 @property (nonatomic, retain) CCAction *move;
 
 // returns a CCScene that contains the BackgroundLayer as the only child
 +(CCScene *) scene;
 - (void) scroll:(ccTime)dt;
-- (void) orientationChanged:(NSNotification *)notification;
+- (void) collisiondetection;
 
 @end
