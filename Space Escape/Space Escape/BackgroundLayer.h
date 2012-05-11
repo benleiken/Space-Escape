@@ -20,6 +20,7 @@
     // objects to avoid
     CCSprite *lamp1;
     CCSprite *box1;
+    CCSprite *box2;
     
     CCSprite *_astronaut;
     CCAction *_running;

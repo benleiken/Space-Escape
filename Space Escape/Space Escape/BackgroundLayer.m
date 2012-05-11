@@ -52,6 +52,7 @@
         seeker = [CCSprite spriteWithFile:@"seeker.png"];
         lamp1 = [CCSprite spriteWithFile:@"lamp.png"];
         box1 = [CCSprite spriteWithFile:@"box.png"];
+        box2 = [CCSprite spriteWithFile:@"box.png"];
         
 		//one the screen and second just next to it
 		background.position = ccp(winSize.width/2, winSize.height/2);
@@ -59,6 +60,7 @@
         seeker.position = ccp(winSize.width + 300, winSize.height/2);
         lamp1.position = ccp(winSize.width + 450, winSize.height - lamp1.contentSize.height/2);
         box1.position = ccp(winSize.width + 500, 100);
+        box2.position = ccp(winSize.width + 1000, 100);
         
 		//add schedule to move backgrounds
 		[self schedule:@selector(scroll:)];
@@ -70,6 +72,7 @@
         [self addChild:seeker];
         [self addChild:lamp1];
         [self addChild:box1];
+        [self addChild:box2];
         
         _isRunning = TRUE;
         clicks = 0;
@@ -82,17 +85,6 @@
         for(int i = 1; i <= 8; ++i) {
             [runningFrames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"running%d.png", i]]];
         };
-        
-        //jumping action
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile: @"jumping.plist"];
-        CCSpriteBatchNode *jumpingSpriteSheet = [CCSpriteBatchNode batchNodeWithFile:@"jumping.png"];
-        [self addChild:jumpingSpriteSheet];
-        NSMutableArray *jumpingFrames = [NSMutableArray array];
-        for(int i = 1; i <= 6; ++i) {
-            [jumpingFrames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"jumping%d.png", i]]];
-        };
-        
-        //if (_isRunning) {
         CCAnimation *runningAnim = [CCAnimation animationWithFrames:runningFrames delay:0.1f];
         self.astronaut = [CCSprite spriteWithSpriteFrameName:@"running1.png"];        
         _astronaut.position = ccp(50, 100);
@@ -100,15 +92,6 @@
                         [CCAnimate actionWithAnimation:runningAnim restoreOriginalFrame:NO]];
         [_astronaut runAction:_running];
         [spriteSheet addChild:_astronaut];
-        //}
-        //else {
-        //    CCAnimation *jumpingAnim = [CCAnimation animationWithFrames:jumpingFrames delay:0.1f];
-        //    _astronaut = [CCSprite spriteWithSpriteFrameName:@"jumping1.png"];        
-        //    _astronaut.position = ccp(50, 100);
-        //    self.jumping = [CCAnimate actionWithAnimation:jumpingAnim restoreOriginalFrame:NO];
-        //    [_astronaut runAction:_jumping];
-        //    [jumpingSpriteSheet addChild:_astronaut];
-        //}
 	}
 	return self;
 }
@@ -135,7 +118,7 @@
 - (void) scroll:(ccTime)dt{
     
     CGSize winSize = [[CCDirector sharedDirector] winSize];
-
+    
     
 	BOOL flg=FALSE;
     
@@ -145,7 +128,7 @@
 		background2.position = ccp(winSize.width/2, winSize.height/2);
 		flg =TRUE;
     }
-
+    
 	if (background2.position.x + background2.contentSize.width/2 < 0) {
         background2.position = ccp(winSize.width + background2.contentSize.width/2, winSize.height/2);
 		background.position = ccp(winSize.width/2, winSize.height/2);
@@ -159,6 +142,7 @@
         seeker.position = ccp( seeker.position.x - 100*dt, seeker.position.y );
         lamp1.position = ccp( lamp1.position.x - 100*dt, lamp1.position.y );
         box1.position = ccp( box1.position.x - 100*dt, box1.position.y );
+        box2.position = ccp( box2.position.x - 100*dt, box2.position.y );
 	}
     
 }
@@ -167,8 +151,13 @@
 {
     CGRect astroRect = [_astronaut boundingBox];
     CGRect box1Rect = [box1 boundingBox];
+    CGRect box2Rect = [box2 boundingBox];
     
     if (CGRectIntersectsRect(astroRect, box1Rect)) {
+        //[fichiersToDelete addObject:fichier];
+        _astronaut.position = ccp( 200, 200 );
+    }
+    if (CGRectIntersectsRect(astroRect, box2Rect)) {
         //[fichiersToDelete addObject:fichier];
         _astronaut.position = ccp( 200, 200 );
     }
