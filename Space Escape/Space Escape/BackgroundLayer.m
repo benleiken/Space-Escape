@@ -51,7 +51,6 @@
 		//create both sprite to handle background
 		background = [CCSprite spriteWithFile:@"se_background.gif"];
 		background2 = [CCSprite spriteWithFile:@"se_background.gif"];
-        seeker = [CCSprite spriteWithFile:@"seeker.png"];
         lamp1 = [CCSprite spriteWithFile:@"lamp.png"];
         box1 = [CCSprite spriteWithFile:@"alien.png"];
         box2 = [CCSprite spriteWithFile:@"alien.png"];
@@ -69,7 +68,6 @@
 		//one the screen and second just next to it
 		background.position = ccp(winSize.width/2, winSize.height/2);
 		background2.position = ccp(winSize.width + background2.contentSize.width/2, winSize.height/2);
-        seeker.position = ccp(winSize.width + 300, winSize.height/2);
         lamp1.position = ccp(winSize.width + 450, winSize.height - lamp1.contentSize.height/2);
         box1.position = ccp(winSize.width + 450, 100);
         box2.position = ccp(winSize.width + 800, 100);
@@ -217,7 +215,6 @@
 		//move them 100*dt pixels to left
 		background.position = ccp( background.position.x - 170*dt, background.position.y);
 		background2.position = ccp( background2.position.x  - 170*dt, background2.position.y);
-        seeker.position = ccp( seeker.position.x - 170*dt, seeker.position.y );
         lamp1.position = ccp( lamp1.position.x - 170*dt, lamp1.position.y );
         box1.position = ccp( box1.position.x - 170*dt, box1.position.y );
         box2.position = ccp( box2.position.x - 170*dt, box2.position.y );
